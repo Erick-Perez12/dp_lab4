@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,12 +7,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-
-BIENVENIDO <c:out value="${person.name}" default="desconocida"/> UN GUSTO CONOCERTE
-
-<!--<c:forEach var="person" items="${persons}">
-<c:out value="${person.name}" />
-
-</c:forEach> -->
+<h1>TRABAJO LAB 4!</h1>
+<form action="helloServlet" method="post">
+    Ingresa tu nombre: <input type="text" name="yourName" size="20">
+    <input type="submit" value="Call Servlet" />
+</form>
 </body>
 </html>
