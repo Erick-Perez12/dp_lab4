@@ -5,12 +5,24 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
+<style>
+body{
+  background-color: rgba(255,128,0);
+  text-align: center;
+  color: black;
+  font-family: calibri;
+}
+</style>
 </head>
 <body>
 <h1>TRABAJO LAB 4!</h1>
 <form action="helloServlet" method="post">
-    Ingresa tu nombre: <input type="text" name="yourName" size="20">
-    <input type="submit" value="Call Servlet" />
+    <div class = "title"> <h2>RELLENE ESPACIOS</h2></div> 
+    <div class = "personal"><p class = "p1">INGRESE NOMBRE: <input type = "text" name = "message" size ="25">
+    <br> <p class = "p1">INGRESE NUMERO DE CONTROL: <input type = "text" name = "numero" size ="5"><br><br>
+    <input type = "submit" value ="enviar">
+    </div>
+
 </form>
 </body>
 </html>
