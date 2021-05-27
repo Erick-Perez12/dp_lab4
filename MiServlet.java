@@ -1,9 +1,7 @@
 package mi.server;
 
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Date;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -34,20 +32,21 @@ public class MiServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 		
-		String yourName = request.getParameter("yourName");
+		String message = request.getParameter("message");
+		String numero = request.getParameter("numero");
+		String sistema = request.getHeader("USER-AGENT");
 		
-		//List<Person> persons = new ArrayList<>();
-		Person person = new Person();
-		person.setName(yourName);
-		person.setAge("17");
-		request.setAttribute("person", person);
+		Pag bienvenida = new Pag();
+	    Date fecha = new Date();
+	    
+	    bienvenida.setMessage(message);
+		bienvenida.setNumero(numero);
+	    
+		request.setAttribute("Pag", bienvenida);
+		request.setAttribute("fecha", fecha);
+		request.setAttribute("sistema", sistema);
 		
-		/*persons.add(person);
-		person.setName("juan");
-		person.setAge("17");
-		
-	
-		request.setAttribute("persons", persons);*/
+
 		
 		RequestDispatcher dispatcher =
 				request.getRequestDispatcher("home.jsp");
